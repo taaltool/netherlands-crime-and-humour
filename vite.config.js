@@ -3,13 +3,13 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   base: "/netherlands-crime-and-humour/",
-  root: './src',
-  publicDir: '../public',
+  root: './',
+  publicDir: './public',
   server: {
     hmr: false,
   },
   build: {
-    outDir: '../dist',
+    outDir: './dist',
     modulePreload: false,
   },
   plugins: [react()],
