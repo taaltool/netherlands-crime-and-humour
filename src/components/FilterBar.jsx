@@ -139,7 +139,7 @@ export default function FilterBar({
           <svg width="12" height="12"><circle cx="6" cy="6" r="5.5" fill="#555" opacity="0.7"/></svg>
           <svg width="18" height="18"><circle cx="9" cy="9" r="8.5" fill="#555" opacity="0.7"/></svg>
         </div>
-        <div className="leg-note">page range × frequency</div>
+        <div className="leg-note"><p>by relevance:</p><p>page range × frequency</p></div>
       </div>
     </aside>
   )
