@@ -11,6 +11,7 @@ export default function FilterBar({
   activeGenres, setActiveGenres,
   activeAuthors, setActiveAuthors,
   activePlaceTypes, setActivePlaceTypes,
+  isOpen
 }) {
   const genres     = useMemo(() => [...new Set(locations.map(l => l.genre).filter(Boolean))], [locations])
   const authors    = useMemo(() => [...new Set(locations.map(l => l.author_surname).filter(Boolean))], [locations])
@@ -19,7 +20,7 @@ export default function FilterBar({
   const hasFilter = activeGenres.length || activeAuthors.length || activePlaceTypes.length
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? 'sidebar--open' : ''}`}>
       <div className="filter-section">
         <div className="filter-label">Genre</div>
         <div className="pills">

@@ -254,3 +254,49 @@ body {
   color: #444;
   font-style: italic;
 }
+
+
+.hamburger {
+  display: none;
+  font-size: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1A1A1A;
+  padding: 4px 8px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navbar"
+      "map"
+      "footer";
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar--open {
+    display: flex;
+    position: fixed;
+    top: 69px;
+    left: 20px;
+    width: 260px;
+    height: calc(100vh - 48px);
+    z-index: 2000;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+    overflow-y: auto;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 12px;
+  }
+}
