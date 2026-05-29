@@ -1,0 +1,36 @@
+<svg width="400" height="400" viewBox="0 0 680 680" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Obrys Nizozemska</title>
+  <path d="
+    M 313,265
+    C 308,278 305,287 307,295
+    L 301,315
+    L 280,350
+    L 272,362
+    L 265,372
+    L 255,388
+    L 245,402
+    L 290,404
+    L 322,398
+    L 344,400
+    L 355,418
+    L 360,447
+    L 376,455
+    L 382,432
+    L 383,402
+    L 375,350
+    L 390,330
+    L 428,283
+    L 433,238
+    L 435,225
+    L 415,225
+    L 385,228
+    L 346,246
+    L 327,268
+    Z"
+    fill="#F0EDE8"
+    stroke="#1A1A1A"
+    stroke-width="3"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+</svg>
