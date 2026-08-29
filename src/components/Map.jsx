@@ -19,6 +19,7 @@ const authorColors = {
   Janečková: "#1A5090",
   Klevisová: "#1A7A60",
   Schrevel: "#6A3A8A",
+  Kager: "#9A2A6A",
 };
 
 const genreColors = {
