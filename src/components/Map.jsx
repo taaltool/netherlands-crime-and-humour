@@ -29,7 +29,7 @@ const genreColors = {
 
 const emotionEmoji = { 1: "😄", 2: "🙂", 3: "😐", 4: "😟", 5: "😱" };
 
-const cartoKey = import.meta.env.VITE_CARTO_KEY
+const cartoKey = import.meta.env.VITE_CARTO_KEY;
 
 function getColor(loc, showGenreColors) {
   if (showGenreColors) return genreColors[loc.genre] || "#999";
@@ -187,7 +187,7 @@ function GeodesicLine({ from, to, color }) {
   return null;
 }
 
-function SynthesisedZone({ from, to, color }) {
+function SynthesisedZone({ from, to, color, loc }) {
   const map = useMap();
   useEffect(() => {
     if (!from || !to || isNaN(from[0]) || isNaN(to[0])) return;
@@ -219,8 +219,12 @@ function SynthesisedZone({ from, to, color }) {
       fillOpacity: 0.15,
     }).addTo(map);
 
+    polygon.bindPopup(
+      `<b>${loc.place}</b><br>${loc.author_surname} · ${loc.book_title}<br>pp. ${(loc.place_pp || []).join("; ")}`,
+    );
+
     return () => map.removeLayer(polygon);
-  }, [map, from, to, color]);
+  }, [map, from, to, color, loc]);
   return null;
 }
 
@@ -305,7 +309,15 @@ export default function Map({ locations, showEmotions, showGenreColors }) {
           const from = [Number(loc.lat_from), Number(loc.lng_from)];
           const to = [Number(loc.lat_to), Number(loc.lng_to)];
           if (isNaN(from[0]) || isNaN(to[0])) return null;
-          return <SynthesisedZone key={i} from={from} to={to} color={color} />;
+          return (
+            <SynthesisedZone
+              key={i}
+              from={from}
+              to={to}
+              color={color}
+              loc={loc}
+            />
+          );
         }
 
         // Emotions mode
